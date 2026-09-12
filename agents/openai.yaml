@@ -1,0 +1,7 @@
+interface:
+  display_name: "CNKI 批量题录采集"
+  short_description: "批量导出、清洗并核验知网结构化文献题录"
+  default_prompt: "使用 $cnkidata 采集指定期刊和年份范围的 CNKI 发文题录并导出为 xlsx。"
+
+policy:
+  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 # cnkidata — 知网批量数据导出 Skill
 
-从知网（CNKI）批量导出**结构化文献数据**为 18 列 xlsx 表格。适用于 Claude Code。
+从知网（CNKI）批量导出**结构化文献数据**为 18 列 xlsx 表格。适用于 Codex 和 Claude Code。
 
 核心场景是"按期刊/文献来源批量导出某时间段全部发文"，也支持任意定制检索（主题、作者、关键词、单位、基金等字段组合 + 年份范围 + 排序方式）后的逐页全选与导出。
 
@@ -15,6 +15,14 @@
 
 ## 安装
 
+Codex：
+
+```bash
+git clone https://github.com/edsion12138/cnkidata.git ~/.agents/skills/cnkidata
+```
+
+Claude Code：
+
 ```bash
 git clone https://github.com/edsion12138/cnkidata.git ~/.claude/skills/cnkidata
 ```
@@ -22,12 +30,12 @@ git clone https://github.com/edsion12138/cnkidata.git ~/.claude/skills/cnkidata
 ## 前置条件
 
 1. 浏览器已登录知网（机构/个人登录态，`cnki-journal-search` 需要登录）
-2. Chromium 系浏览器可用（bb-browser 驱动）
+2. Chromium 系浏览器及当前环境的浏览器自动化工具可用；Codex 无浏览器 MCP 时使用 `agent-browser`
 3. Python 3 环境（用于合并/去重/核验脚本）
 
 ## 使用
 
-在 Claude Code 中说：
+在 Codex 或 Claude Code 中说：
 
 ```
 把《高等教育研究》2020-2026 年的全部论文导出成 18 列 xlsx
@@ -74,4 +82,4 @@ Year-年, Volume-卷, Period-期, PageCount-页码, CLC-中图分类号, ISSN, U
 
 ## 依赖
 
-`python3`, `bb-browser`（浏览器自动化）
+`python3`，以及当前环境可用的浏览器自动化工具；Codex 的 CLI 后备方案为 `agent-browser`
